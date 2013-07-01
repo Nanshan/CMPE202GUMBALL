@@ -18,11 +18,23 @@ public class Message extends Actor
         gi.setColor( java.awt.Color.BLACK ) ;
         gi.drawString( msg, 0, 25 );  
     }
-    
-    public void setMessage(String msg){
+   
 
- 
-}
+   protected void setMessage( String msg ) 
+    {
+        int mouseX, mouseY ;
+        MouseInfo mouse = Greenfoot.getMouseInfo();  
+        mouseX=mouse.getX();  
+        mouseY=mouse.getY();  
+        World world = getWorld();
+        if ( getWorld() != null )
+        {
+            world.removeObject( this ) ;
+        }
+        world.addObject( this, mouseX, mouseY ) ;
+        setText( msg ) ;        
+    }
+
 
     public void act() 
     {
