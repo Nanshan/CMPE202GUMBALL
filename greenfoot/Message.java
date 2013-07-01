@@ -18,6 +18,11 @@ public class Message extends Actor
         gi.setColor( java.awt.Color.BLACK ) ;
         gi.drawString( msg, 0, 25 );  
     }
+    
+    public void setMessage(String msg){
+
+ 
+}
 
     public void act() 
     {
