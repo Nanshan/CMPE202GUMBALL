@@ -26,7 +26,7 @@ public class Inspector extends Alien
 	   //setMessage( coin.getClass().getName() ) ;
 	   int whichPicker = Greenfoot.getRandomNumber( pickers.size() ) ;
 	   Picker pickerChosen = pickers.get( whichPicker ) ;
-	   System.out.println( "Picker: " + pickerChosen.getClass() ) ;
+	   //System.out.println( "Picker: " + pickerChosen.getClass() ) ;
 	   //if ( coin.getClass() == Quarter.class )
 	   //    pickerChosen.pick() ;
 	}

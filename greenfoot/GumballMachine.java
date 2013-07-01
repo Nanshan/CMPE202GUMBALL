@@ -14,9 +14,27 @@ public class GumballMachine extends Actor
         GreenfootImage image = getImage() ;
         image.scale( 350, 400 ) ; 
     }
+    
     Message m=new Message();
     Coin haveCoin=new Coin();
     Inspector inspector=new Inspector();
+    
+    
+    protected void setMessage( String msg ) 
+    {
+        int mouseX, mouseY ;
+        MouseInfo mouse = Greenfoot.getMouseInfo();  
+        mouseX=mouse.getX();  
+        mouseY=mouse.getY();  
+        World world = getWorld();
+        if ( getWorld() != null )
+        {
+            world.removeObject(m ) ;
+        }
+        world.addObject(m, mouseX, mouseY ) ;
+        m.setText( msg ) ;        
+    }
+    
     public void act() 
     {
         int mouseX, mouseY ;
@@ -32,7 +50,7 @@ public class GumballMachine extends Actor
         if ( coin != null )
         {
             //System.out.println( coin.toString() ) ;
-            m.setMessage("Have Coin Now");
+            setMessage("Have Coin Now");
             World world = getWorld() ;
             world.removeObject( coin ) ;
         }
@@ -46,10 +64,10 @@ public class GumballMachine extends Actor
         if(Greenfoot.mousePressed(this)) {          
             MouseInfo mouse = Greenfoot.getMouseInfo();  
              if ( haveCoin == null )
-                m.setMessage( "No Coin Now!" ) ;
+                setMessage( "No Coin Now!" ) ;
             else
             {
-                m.setMessage( "Turned Crank!" ) ;
+                setMessage( "Turned Crank!" ) ;
                 inspector.inspect( haveCoin ) ; // how to piak a green ball
                 haveCoin = null ;
             }
