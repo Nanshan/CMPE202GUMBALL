@@ -17,30 +17,31 @@ public class GumballMachine extends Actor
     
     Message m=new Message();
     Coin haveCoin=new Coin();
-    Inspector inspector=new Inspector();
+    Inspector inspector;
     
-    
+    public void setInspector(Inspector in){
+        inspector=in;
+    }
     protected void setMessage( String msg ) 
     {
+        m.setText( msg ) ;       
         int mouseX, mouseY ;
         MouseInfo mouse = Greenfoot.getMouseInfo();  
         mouseX=mouse.getX();  
         mouseY=mouse.getY();  
         World world = getWorld();
-        if ( getWorld() != null )
+        if ( m.getWorld() != null )
         {
-            world.removeObject(m ) ;
+            world.removeObject( m ) ;
         }
         world.addObject(m, mouseX, mouseY ) ;
-        m.setText( msg ) ;        
     }
     
     public void act() 
-    {
-        int mouseX, mouseY ;
-        
+    {    
         Actor coin;
-        coin = getOneIntersectingObject( Coin.class ) ;
+        //coin = getOneIntersectingObject( Coin.class ) ;
+        coin=getOneObjectAtOffset(+5, +5, Coin.class);
         /*
          * if you have dragged any coin ( quarter, penny, fake) over machine;
          * then yo have the coin now
@@ -50,11 +51,13 @@ public class GumballMachine extends Actor
         if ( coin != null )
         {
             //System.out.println( coin.toString() ) ;
+            haveCoin=(Coin) coin;
             setMessage("Have Coin Now");
             World world = getWorld() ;
-            world.removeObject( coin ) ;
+            world.removeObject( haveCoin ) ;
         }
-       /*
+        
+        /*
         * when pressed the machine
         * then turn the crank
         * show " No Coin Now" if no coin over 
@@ -66,13 +69,18 @@ public class GumballMachine extends Actor
              if ( haveCoin == null )
                 setMessage( "No Coin Now!" ) ;
             else
-            {
+            {  
+                System.out.println ("doing");
                 setMessage( "Turned Crank!" ) ;
-                inspector.inspect( haveCoin ) ; // how to piak a green ball
-                haveCoin = null ;
+               
+                inspector.inspect( haveCoin ) ; // how to piak a gumball
+            
+                //haveCoin = null ;
+                
             }
         }
 
-      
+        
+       
     }    
 }

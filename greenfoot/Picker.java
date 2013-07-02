@@ -6,7 +6,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Picker extends Alien
+public abstract class Picker extends Alien
 {
     /**
      * Act - do whatever the Picker wants to do. This method is called whenever
@@ -15,5 +15,8 @@ public class Picker extends Alien
     public void act() 
     {
         // Add your action code here.
-    }    
+    }  
+    
+    public abstract void pick();
+    //public  abstract void setSuccessor(Picker next);
 }

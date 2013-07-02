@@ -18,7 +18,7 @@ public class Coin extends Actor
             mouseX=mouse.getX();  
             mouseY=mouse.getY();  
             setLocation(mouseX, mouseY);  
-            //System.out.println( "(" + mouseX + ", " + mouseY + ")" ) ;
+            System.out.println( "(" + mouseX + ", " + mouseY + ")" ) ;
         } 
     }    
 }

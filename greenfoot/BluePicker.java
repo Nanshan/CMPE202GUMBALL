@@ -1,33 +1,33 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class GreenPicker here.
+ * Write a description of class BluePicker here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class GreenPicker extends Picker
+public class BluePicker extends Picker
 {
     /**
-     * Act - do whatever the GreenPicker wants to do. This method is called whenever
+     * Act - do whatever the BluePicker wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
     public void act() 
     {
         // Add your action code here.
-    }
-    
+    }   
+    GumballMachine gumballmachine=new GumballMachine();
     public void pick(){
-        Gumball gm=new GreenGumball();
+        Gumball gm=new BlueGumball();
         World world=getWorld();
         world.addObject(gm, 400, 400);
         setMessage(gm.getClass().getName());
         
         
     }
-    /*
+/*
     public void pick(Gumball gm){
-         int randomNum=Greenfoot.getRandomNumber(30);
+        int randomNum=Greenfoot.getRandomNumber(30);
         if(randomNum <10){
         World world=getWorld();
         world.addObject(gm, 400, 400);
@@ -36,11 +36,14 @@ public class GreenPicker extends Picker
                 successor.pick(gm);
             }
         }
+
     }
+    
     Picker successor=null;
     public void setSuccessor(Picker next){
         this.successor=next;
         
     }
+    
     */
 }

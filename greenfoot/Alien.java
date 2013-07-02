@@ -8,7 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Alien extends Actor
 {
-
+    Message m=new Message();
+  
     public Alien()
     {
         GreenfootImage image = getImage() ;
@@ -18,5 +19,20 @@ public class Alien extends Actor
     public void act() 
     {
         // Add your action code here.
-    }    
+    }  
+  
+      protected void setMessage( String msg ) 
+    {
+        int x, y;
+        x = getX();
+        y = getY();
+        m.setText( msg ) ; 
+        World world = getWorld();
+        if ( m.getWorld() != null )
+        {
+            world.removeObject( m ) ;
+        }
+        world.addObject(m, x, y ) ;
+               
+    }
 }

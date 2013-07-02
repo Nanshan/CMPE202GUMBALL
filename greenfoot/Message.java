@@ -20,9 +20,6 @@ public class Message extends Actor
     }
    
 
-
-
-
     public void act() 
     {
         if(Greenfoot.mousePressed(this)) {          
