@@ -74,5 +74,10 @@ public class GumballWorld extends World
         redpicker.setLocation(559, 467);
         randompicker.setLocation(611, 358);
         redpicker.setLocation(734, 452);
+
+        Quarter quarter4 = new Quarter();
+        addObject(quarter4, 114, 423);
+
+        removeObject(quarter4);
     }
 }

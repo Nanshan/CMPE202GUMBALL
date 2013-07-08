@@ -38,8 +38,12 @@ public class Inspector extends Alien
            GumballMachine.num_Gumballs--;
            System.out.println("num of ball: "+ GumballMachine.num_Gumballs);
 	       pickerChosen.pick() ;
+	
+	   }else {
+	       setMessage("No Gumball");
+	       GumballMachine.num_Gumballs=2;
 	       
-	       
+	       System.out.println("No Gumball, please insert more");
 	   }
 	}
 	

@@ -11,7 +11,7 @@ public class GumballMachine extends Actor
     Message m=new Message();
     Coin haveCoin;
     Inspector inspector;
-    public static int num_Gumballs=10;
+    public static int num_Gumballs=2;
     
   
     
@@ -46,7 +46,7 @@ public class GumballMachine extends Actor
     public void act() 
     {    
         
-        if (num_Gumballs !=0){
+     
          Actor coin;
         //coin = getOneIntersectingObject( Coin.class ) ;
         coin=getOneObjectAtOffset(+5, +5, Coin.class);
@@ -86,12 +86,9 @@ public class GumballMachine extends Actor
             }
         }
         
-    }else{
-        
-        System.out.println("No gumball,please try later");
     }
 
-        
-       
-    }    
 }
+
+ 
+
