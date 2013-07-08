@@ -1,5 +1,5 @@
 #Greenfoot properties
-#Tue Jul 02 16:10:49 PDT 2013
+#Sun Jul 07 22:53:46 PDT 2013
 target16.name=Picker
 dependency35.to=BlueGumball
 class.BluePicker.superclass=Picker
@@ -84,8 +84,8 @@ target8.height=50
 dependency26.to=GreenPicker
 target16.editor.width=900
 class.RedGumball.image=red-gumball.png
-mainWindow.y=22
-mainWindow.x=177
+mainWindow.y=120
+mainWindow.x=92
 target3.showInterface=false
 target12.showInterface=false
 dependency3.to=Quarter
@@ -128,9 +128,9 @@ target18.showInterface=false
 target10.showInterface=false
 target1.showInterface=false
 target5.type=ClassTarget
-target14.editor.y=136
+target14.editor.y=114
 dependency10.to=GreenPicker
-target14.editor.x=142
+target14.editor.x=113
 target17.naviview.expanded=true
 dependency30.type=UsesDependency
 target2.height=50
@@ -315,7 +315,7 @@ dependency40.from=Alien
 dependency7.from=GumballWorld
 target6.width=110
 target6.editor.y=89
-mainWindow.height=664
+mainWindow.height=583
 target9.naviview.expanded=true
 target6.editor.x=283
 target5.showInterface=false

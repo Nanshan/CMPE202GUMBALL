@@ -8,16 +8,21 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class GumballMachine extends Actor
 {
-
-    public GumballMachine()
-    {
-        GreenfootImage image = getImage() ;
-        image.scale( 350, 400 ) ; 
-    }
-    
     Message m=new Message();
     Coin haveCoin;
     Inspector inspector;
+    public static int num_Gumballs=10;
+    
+  
+    
+    public GumballMachine()
+    {
+       
+        GreenfootImage image = getImage() ;
+        image.scale( 350, 400 ) ; 
+    }
+
+  
     
     public void setInspector(Inspector in){
         inspector=in;
@@ -37,9 +42,12 @@ public class GumballMachine extends Actor
         world.addObject(m, mouseX, mouseY ) ;
     }
     
+   
     public void act() 
     {    
-        Actor coin;
+        
+        if (num_Gumballs !=0){
+         Actor coin;
         //coin = getOneIntersectingObject( Coin.class ) ;
         coin=getOneObjectAtOffset(+5, +5, Coin.class);
         /*
@@ -55,7 +63,6 @@ public class GumballMachine extends Actor
             setMessage("Have Coin Now");
             World world = getWorld() ;
             world.removeObject( haveCoin ) ;
-            //Greenfoot.playSound("eating.wav");
         }
         
         /*
@@ -71,15 +78,18 @@ public class GumballMachine extends Actor
                 setMessage( "No Coin Now!" ) ;
             else
             {  
-                System.out.println ("doing");
+                //System.out.println ("testing");
                 setMessage( "Turned Crank!" ) ;
-               
                 inspector.inspect( haveCoin ) ; // how to piak a gumball
-            
-                //haveCoin = null ;
+                haveCoin = null ;
                 
             }
         }
+        
+    }else{
+        
+        System.out.println("No gumball,please try later");
+    }
 
         
        
