@@ -8,18 +8,11 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class RandomPicker extends Picker
 {
-    /**
-     * Act - do whatever the RandomPicker wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
-    public void act() 
-    {
-        // Add your action code here.
-    }    
+      
    
     public void pick(){
         
-        System.out.println("Random picking");
+        //System.out.println("Random picking");
         
         Gumball gb= new Gumball();
         int random=Greenfoot.getRandomNumber(3);

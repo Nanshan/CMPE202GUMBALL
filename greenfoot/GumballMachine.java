@@ -12,9 +12,7 @@ public class GumballMachine extends Actor
     Coin haveCoin;
     Inspector inspector;
     public static int num_Gumballs=2;
-    
-  
-    
+   
     public GumballMachine()
     {
        

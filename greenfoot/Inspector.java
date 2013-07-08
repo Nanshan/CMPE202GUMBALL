@@ -1,12 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
-/**
- * Write a description of class Inspector here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- */
+
 public class Inspector extends Alien
 
 
@@ -21,7 +16,7 @@ public class Inspector extends Alien
 	public void removePicker(Picker obj) {
         pickers.remove(obj) ;
 	}
-   //GumballMachine gm=new GumballMachine();
+
 	
 	public void inspect( Coin coin )
 	{
@@ -34,14 +29,19 @@ public class Inspector extends Alien
 	   Picker pickerChosen = pickers.get( whichPicker ) ;
 	   System.out.println( "Picker: " + pickerChosen.getClass() ) ;
 	  System.out.println("num of ball: "+ GumballMachine.num_Gumballs);
-	   if (  GumballMachine.num_Gumballs !=0 && coin.getClass() == Quarter.class ){
+	   if (  GumballMachine.num_Gumballs !=0  ){
+	       if(coin.getClass() == Quarter.class){
            GumballMachine.num_Gumballs--;
            System.out.println("num of ball: "+ GumballMachine.num_Gumballs);
 	       pickerChosen.pick() ;
+	   }else{
+	       
+	       System.out.println("Not Qulified Quarter, Please insert a real quarter");
+	   }
 	
 	   }else {
 	       setMessage("No Gumball");
-	       GumballMachine.num_Gumballs=2;
+	       GumballMachine.num_Gumballs=10;
 	       
 	       System.out.println("No Gumball, please insert more");
 	   }
