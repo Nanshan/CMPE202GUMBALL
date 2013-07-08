@@ -16,7 +16,7 @@ public class GumballMachine extends Actor
     }
     
     Message m=new Message();
-    Coin haveCoin=new Coin();
+    Coin haveCoin;
     Inspector inspector;
     
     public void setInspector(Inspector in){
@@ -55,6 +55,7 @@ public class GumballMachine extends Actor
             setMessage("Have Coin Now");
             World world = getWorld() ;
             world.removeObject( haveCoin ) ;
+            //Greenfoot.playSound("eating.wav");
         }
         
         /*
