@@ -8,10 +8,12 @@ public class Inspector extends Alien
     private ArrayList<Picker> pickers = new ArrayList<Picker>() ;
     
 	public void addPicker(Picker obj) {
+		System.out.println("Inside addPicker");
 	    pickers.add(obj) ;
 	}
 
 	public void removePicker(Picker obj) {
+		System.out.println("Inside removePicker");
         pickers.remove(obj) ;
 	}
 
@@ -44,5 +46,18 @@ public class Inspector extends Alien
 	       System.out.println("No Gumball, please insert more");
 	   }
 	}
-	
+    /*public void inspect (Coin coin) {
+        System.out.println("Inside the Inspector");
+        System.out.println( "Coin: " + coin.getClass().getName() ) ;
+        setMessage( coin.getClass().getName() ) ;
+        if (coin.getClass() == Quarter.class) {
+            System.out.println("Inserted a quarter");
+            int whichPicker = Greenfoot.getRandomNumber( pickers.size() ) ;
+            PickerFactory pickerFactory = new PickerFactory();
+            Picker pickerChosen = pickerFactory.getPicker(whichPicker);
+            System.out.println("Picker: " + pickerChosen.getClass());
+            pickerChosen.pick() ;
+        }
+    }*/
+
 }
