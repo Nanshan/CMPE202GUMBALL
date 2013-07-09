@@ -14,7 +14,7 @@ public class RandomPicker extends Picker
         
         //System.out.println("Random picking");
         
-        Gumball gb= new Gumball();
+        /*Gumball gb= new Gumball();
         int random=Greenfoot.getRandomNumber(3);
         switch(random){
             
@@ -23,7 +23,12 @@ public class RandomPicker extends Picker
             case 2: gb=new RedGumball(); break;
             
             
-        }
+        }*/
+        int random=Greenfoot.getRandomNumber(2);
+        GumballFactory gmFactory = new GumballFactory();
+        Gumball gb = gmFactory.getGumball(random);
+        System.out.println("Gumball: " + gb.getClass());
+
         World world=getWorld();
         world.addObject(gb, 400, 400);
         setMessage(gb.getClass().getName());
