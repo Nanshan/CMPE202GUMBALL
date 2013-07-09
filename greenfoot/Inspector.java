@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class Inspector extends Alien
 
-
-
 {
     private ArrayList<Picker> pickers = new ArrayList<Picker>() ;
     
