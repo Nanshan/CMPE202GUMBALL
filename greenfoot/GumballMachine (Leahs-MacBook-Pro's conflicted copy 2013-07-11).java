@@ -11,15 +11,16 @@ public class GumballMachine extends Actor
     Message m=new Message();
     Coin haveCoin;
     Inspector inspector;
-    static int num_Gumballs=2;
-    
+    public static int num_Gumballs=2;
+   
     public GumballMachine()
     {
+       
         GreenfootImage image = getImage() ;
         image.scale( 350, 400 ) ; 
     }
-    
-   
+
+  
     
     public void setInspector(Inspector in){
         inspector=in;
@@ -39,32 +40,11 @@ public class GumballMachine extends Actor
         world.addObject(m, mouseX, mouseY ) ;
     }
     
+   
     public void act() 
     {    
-       /*
-        * when pressed the machine
-        * then turn the crank
-        * show " No Coin Now" if no coin over 
-        * Show "Turned Crank" if there is a coin
-        * 
-        */
-        if(Greenfoot.mousePressed(this)) {          
-            MouseInfo mouse = Greenfoot.getMouseInfo();  
-             if ( haveCoin == null ){
-                setMessage( "No Coin Now!" ) ;
-            }
-            else
-            {  
-                System.out.println ("doing");
-                setMessage( "Turned Crank!" ) ;
-               
-                inspector.inspect( haveCoin ) ; // how to piak a gumball
-            
-                haveCoin = null ;
-                
-            }
-        }
         
+     
          Actor coin;
         //coin = getOneIntersectingObject( Coin.class ) ;
         coin=getOneObjectAtOffset(+5, +5, Coin.class);
@@ -76,16 +56,37 @@ public class GumballMachine extends Actor
          */
         if ( coin != null )
         {
-            
-           
+            //System.out.println( coin.toString() ) ;
             haveCoin=(Coin) coin;
             setMessage("Have Coin Now");
             World world = getWorld() ;
             world.removeObject( haveCoin ) ;
-            
         }
-
         
-       
-    }    
+        /*
+        * when pressed the machine
+        * then turn the crank
+        * show " No Coin Now" if no coin over 
+        * Show "Turned Crank" if there is a coin
+        * 
+        */
+        if(Greenfoot.mousePressed(this)) {          
+            MouseInfo mouse = Greenfoot.getMouseInfo();  
+             if ( haveCoin == null )
+                setMessage( "No Coin Now!" ) ;
+            else
+            {  
+                //System.out.println ("testing");
+                setMessage( "Turned Crank!" ) ;
+                inspector.inspect( haveCoin ) ; // how to piak a gumball
+                haveCoin = null ;
+                
+            }
+        }
+        
+    }
+
 }
+
+ 
+

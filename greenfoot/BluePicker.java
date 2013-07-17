@@ -17,25 +17,5 @@ public class BluePicker extends Picker
         
         
     }
-/*
-    public void pick(Gumball gm){
-        int randomNum=Greenfoot.getRandomNumber(30);
-        if(randomNum <10){
-        World world=getWorld();
-        world.addObject(gm, 400, 400);
-        }else{
-            if(successor != null){
-                successor.pick(gm);
-            }
-        }
 
-    }
-    
-    Picker successor=null;
-    public void setSuccessor(Picker next){
-        this.successor=next;
-        
-    }
-    
-    */
 }
