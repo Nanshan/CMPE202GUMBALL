@@ -21,12 +21,7 @@ public class Inspector extends Alien
 	{
 	   
 	   System.out.println( "Coin: " + coin.getClass().getName() ) ;
-	   
-	   /*
-	   for( Picker picker : pickers){
-	       
-	       System.out.println("picker: "+ picker);
-	   }*/
+	 
 	   setMessage( coin.getClass().getName() ) ;
 	   //System.out.println("Picker size: "+pickers.size());
 	   int whichPicker = Greenfoot.getRandomNumber( pickers.size() ) ;
@@ -38,23 +33,25 @@ public class Inspector extends Alien
 	    */
 	   //System.out.println("which picker: "+whichPicker);
 	   Picker pickerChosen = pickers.get( whichPicker ) ;
-	   //System.out.println( "Picker: " + pickerChosen.getClass() ) ;
-	   //System.out.println("num of ball: "+ GumballMachine.num_Gumballs);
+	   System.out.println( "Picker: " + pickerChosen.getClass() ) ;
+	   System.out.println("Num of ball: "+ GumballMachine.num_Gumballs);
 	   if (  GumballMachine.num_Gumballs !=0  ){
+
 	       if(coin.getClass() == Quarter.class){
-           GumballMachine.num_Gumballs--;
-           //System.out.println("num of ball: "+ GumballMachine.num_Gumballs);
-	       pickerChosen.pick() ;
+	           
+             GumballMachine.num_Gumballs--;
+	         pickerChosen.pick() ;//at runtime
+	         Greenfoot.playSound("BALLOUT.wav");
 	       
-	   }else{
+	      }else{
 	       
 	       System.out.println("Not Qulified Quarter, Please insert a real quarter");
-	   }
+	      }
 	
 	   }else {
-	       setMessage("No Gumball, please add more gumballs");
-	       GumballMachine.num_Gumballs=10;
 	       
+	       setMessage("No Gumball");
+	       GumballMachine.num_Gumballs=10;
 	       System.out.println("No Gumball, please insert more");
 	   }
 	}

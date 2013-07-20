@@ -11,7 +11,7 @@ public class GumballMachine extends Actor
     Message m=new Message();
     Coin haveCoin;
     Inspector inspector;
-    static int num_Gumballs=2;
+    static int num_Gumballs=2; //initial number of gummballs
     
     public GumballMachine()
     {
@@ -28,9 +28,8 @@ public class GumballMachine extends Actor
     {
         m.setText( msg ) ;       
         int mouseX, mouseY ;
-        MouseInfo mouse = Greenfoot.getMouseInfo();  
-        mouseX=mouse.getX();  
-        mouseY=mouse.getY();  
+        mouseX=getX();
+        mouseY=getY();
         World world = getWorld();
         if ( m.getWorld() != null )
         {
@@ -48,15 +47,17 @@ public class GumballMachine extends Actor
         * Show "Turned Crank" if there is a coin
         * 
         */
-        if(Greenfoot.mousePressed(this)) {          
+        if(Greenfoot.mousePressed(this)) { 
+            
             MouseInfo mouse = Greenfoot.getMouseInfo();  
              if ( haveCoin == null ){
                 setMessage( "No Coin Now!" ) ;
             }
             else
             {  
-                System.out.println ("doing");
+              
                 setMessage( "Turned Crank!" ) ;
+                Greenfoot.playSound("CRANK.wav");
                
                 inspector.inspect( haveCoin ) ; // how to piak a gumball
             
@@ -66,7 +67,7 @@ public class GumballMachine extends Actor
         }
         
          Actor coin;
-        //coin = getOneIntersectingObject( Coin.class ) ;
+    
         coin=getOneObjectAtOffset(+5, +5, Coin.class);
         /*
          * if you have dragged any coin ( quarter, penny, fake) over machine;
@@ -77,11 +78,11 @@ public class GumballMachine extends Actor
         if ( coin != null )
         {
             
-           
             haveCoin=(Coin) coin;
             setMessage("Have Coin Now");
             World world = getWorld() ;
             world.removeObject( haveCoin ) ;
+            Greenfoot.playSound("INSERT.wav");
             
         }
 
