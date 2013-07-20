@@ -11,9 +11,6 @@ public class RandomPicker extends Picker
       
    
     public void pick() {
-        
-        System.out.println("Random picking");
-        
         int random=Greenfoot.getRandomNumber(2);
         GumballFactory gmFactory = new GumballFactory();
 
