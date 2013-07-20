@@ -10,23 +10,30 @@ public class RandomPicker extends Picker
 {
       
    
-    public void pick(){
+    public void pick() {
         
-        //System.out.println("Random picking");
+        System.out.println("Random picking");
         
-        /*Gumball gb= new Gumball();
-        int random=Greenfoot.getRandomNumber(3);
-        switch(random){
-            
-            case 0: gb=new BlueGumball(); break;
-            case 1: gb=new GreenGumball(); break;
-            case 2: gb=new RedGumball(); break;
-            
-            
-        }*/
         int random=Greenfoot.getRandomNumber(2);
         GumballFactory gmFactory = new GumballFactory();
-        Gumball gb = gmFactory.getGumball(random);
+
+        Gumball gb;
+        int random=Greenfoot.getRandomNumber(3);
+        switch(random) {
+            case 0:
+                BlueGumballFactory bgf = new BlueGumballFactory();
+                gb = bgf.getGumball();
+                break;
+            case 1:
+                GreenGumballFactory ggf = new GreenGumballFactory();
+                gb = ggf.getGumball();
+                break;
+            case 2:      // falling case
+            default:
+                RedGumballFactory rgf = new RedGumballFactory();
+                gb = rgf.getGumball();
+                break;
+        }
         System.out.println("Gumball: " + gb.getClass());
 
         World world=getWorld();
