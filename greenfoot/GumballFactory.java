@@ -2,19 +2,9 @@
  * Implements factory for Gumball
  * 
  * @author Anand Sherkhane
- * @version 1.0
+ * @version 1.1
  */
-public class GumballFactory  
+public abstract class GumballFactory  
 {
-    public Gumball getGumball(int gumballType) {
-        if (gumballType == 0) {
-            return new BlueGumball();
-        } else if (gumballType == 1) {
-            return new GreenGumball();
-        } else if (gumballType == 2) {
-            return new RedGumball();
-        } else {
-            return null;
-        }
-    }
+    public abstract Gumball getGumball();
 }
