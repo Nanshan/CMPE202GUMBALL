@@ -57,7 +57,7 @@ public class GumballMachine extends Actor
             {  
               
                 setMessage( "Turned Crank!" ) ;
-                Greenfoot.playSound("CRANK.wav");
+                //Greenfoot.playSound("CRANK.wav");
                
                 inspector.inspect( haveCoin ) ; // how to piak a gumball
             
