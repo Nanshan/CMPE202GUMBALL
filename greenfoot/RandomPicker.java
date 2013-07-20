@@ -14,16 +14,16 @@ public class RandomPicker extends Picker
         int random=Greenfoot.getRandomNumber(3);
         switch(random) {
             case 0:
-                BlueGumballFactory bgf = new BlueGumballFactory();
+                GumballFactory bgf = new BlueGumballFactory();
                 gb = bgf.getGumball();
                 break;
             case 1:
-                GreenGumballFactory ggf = new GreenGumballFactory();
+                GumballFactory ggf = new GreenGumballFactory();
                 gb = ggf.getGumball();
                 break;
             case 2:      // falling case
             default:
-                RedGumballFactory rgf = new RedGumballFactory();
+                GumballFactory rgf = new RedGumballFactory();
                 gb = rgf.getGumball();
                 break;
         }
