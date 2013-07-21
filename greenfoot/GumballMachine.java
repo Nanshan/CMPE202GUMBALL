@@ -14,7 +14,7 @@ public class GumballMachine extends Actor implements Subject
     Coin haveCoin;
     Inspector inspector;
     static int num_Gumballs=2; //initial number of gummballs
-    private ArrayList observers=new ArrayList();
+    private ArrayList<GumballObserver> observers=new ArrayList<GumballObserver>();
     
     public GumballMachine()
     {
@@ -47,9 +47,7 @@ public class GumballMachine extends Actor implements Subject
     }
 
     
-    public void setInspector(Inspector in){
-        inspector=in;
-    }
+   
     protected void setMessage( String msg ) 
     {
         m.setText( msg ) ;       
@@ -84,7 +82,7 @@ public class GumballMachine extends Actor implements Subject
             {  
               
                 setMessage( "Turned Crank!" ) ;
-                registerObserver(inspector);
+                //registerObserver(inspector);
                 notifyObservers();
               
                 haveCoin = null ;

@@ -35,7 +35,7 @@ public class GumballWorld extends World
 
         Inspector inspector = new Inspector();
         addObject(inspector, 533, 291);
-        
+
         gumballmachine.registerObserver(inspector);
 
         Quarter quarter2 = new Quarter();
@@ -58,14 +58,13 @@ public class GumballWorld extends World
         RedPicker redpicker = new RedPicker();
         addObject(redpicker, 607, 435);
 
-        gumballmachine.setInspector(inspector);
-        
+        //gumballmachine.setInspector(inspector);
+
         inspector.addPicker(bluepicker);
         inspector.addPicker(greenpicker);
         inspector.addPicker(randompicker);
         inspector.addPicker(redpicker);
-        
-       
+
 
         bluepicker.setLocation(676, 65);
         inspector.setLocation(470, 264);
@@ -80,6 +79,11 @@ public class GumballWorld extends World
         randompicker.setLocation(611, 358);
         redpicker.setLocation(734, 452);
 
-     
+        Quarter quarter4 = new Quarter();
+        addObject(quarter4, 245, 567);
+        quarter4.setLocation(132, 541);
+        Quarter quarter5 = new Quarter();
+        addObject(quarter5, 365, 544);
+        quarter5.setLocation(230, 562);
     }
 }
