@@ -5,13 +5,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  * 
  * @author (your name) 
  * @version (a version number or a date)
+ * 
  */
-public class GumballMachine extends Actor
+import java.util.ArrayList;
+public class GumballMachine extends Actor implements Subject
 {
     Message m=new Message();
     Coin haveCoin;
     Inspector inspector;
     static int num_Gumballs=2; //initial number of gummballs
+    private ArrayList observers=new ArrayList();
     
     public GumballMachine()
     {
@@ -19,7 +22,30 @@ public class GumballMachine extends Actor
         image.scale( 350, 400 ) ; 
     }
     
+   public void registerObserver(GumballObserver o)
+    {
+        observers.add(o);
+    }
    
+    public void removeObserver(GumballObserver o)
+    {
+        System.out.println("Observer size: "+ observers.size());
+        int i = observers.indexOf(o);
+        if (i >= 0)  {
+        observers.remove(i);
+    }
+    }
+    
+     public void notifyObservers()
+    {
+       for (int i= 0; i < observers.size(); i++)
+       {
+           GumballObserver observer = (GumballObserver)observers.get(i);
+           observer.update(haveCoin);
+        }
+        
+    }
+
     
     public void setInspector(Inspector in){
         inspector=in;
@@ -51,16 +77,16 @@ public class GumballMachine extends Actor
             
             MouseInfo mouse = Greenfoot.getMouseInfo();  
              if ( haveCoin == null ){
+                 
                 setMessage( "No Coin Now!" ) ;
             }
             else
             {  
               
                 setMessage( "Turned Crank!" ) ;
-                //Greenfoot.playSound("CRANK.wav");
-               
-                inspector.inspect( haveCoin ) ; // how to piak a gumball
-            
+                registerObserver(inspector);
+                notifyObservers();
+              
                 haveCoin = null ;
                 
             }

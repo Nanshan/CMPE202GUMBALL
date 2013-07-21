@@ -9,7 +9,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 public class RandomPicker extends Picker
 {
     public void pick() {
-        System.out.println("inside RandomPicker:pick");
+        
         Gumball gb;
         int random=Greenfoot.getRandomNumber(3);
         switch(random) {

@@ -2,7 +2,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.ArrayList;
 
 
-public class Inspector extends Alien
+public class Inspector extends Alien implements GumballObserver
 
 {
     private ArrayList<Picker> pickers = new ArrayList<Picker>() ;
@@ -16,7 +16,11 @@ public class Inspector extends Alien
         pickers.remove(obj) ;
 	}
 
-        
+   public void update(Coin coin){
+       inspect(coin);
+       
+    }
+    
 	public void inspect( Coin coin )
 	{
 	   
@@ -31,15 +35,16 @@ public class Inspector extends Alien
 	    * 2: RandomPicker
 	    * 3: RedPicker
 	    */
-	   //System.out.println("which picker: "+whichPicker);
+	   
 	   Picker pickerChosen = pickers.get( whichPicker ) ;
 	   System.out.println( "Picker: " + pickerChosen.getClass() ) ;
-	   System.out.println("Num of ball: "+ GumballMachine.num_Gumballs);
+	   
 	   if (  coin.getClass() == Quarter.class){
 
 	       if(GumballMachine.num_Gumballs !=0 ){
 	           
              GumballMachine.num_Gumballs--;
+             System.out.println("Num of ball: "+ GumballMachine.num_Gumballs);
 	         pickerChosen.pick() ;//at runtime
 	         Greenfoot.playSound("BALLOUT.wav");
 	       
