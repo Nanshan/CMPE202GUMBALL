@@ -35,6 +35,8 @@ public class GumballWorld extends World
 
         Inspector inspector = new Inspector();
         addObject(inspector, 533, 291);
+        
+        gumballmachine.registerObserver(inspector);
 
         Quarter quarter2 = new Quarter();
         addObject(quarter2, 63, 421);
