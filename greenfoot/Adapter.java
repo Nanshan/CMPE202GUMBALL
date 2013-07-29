@@ -1,5 +1,5 @@
 
-public class Adapter  implements Target
+public class Adapter implements Target
 
 
 
@@ -8,7 +8,6 @@ public class Adapter  implements Target
     public Adapter(){
        adaptee = new Adaptee();
     }
-    
     
     
     public int getRandomeNumber(int x){

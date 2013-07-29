@@ -4,7 +4,7 @@
  * @author Anand Sherkhane
  * @version 1.1
  */
-public abstract class GumballFactory  
+public interface GumballFactory  
 {
     public abstract Gumball getGumball();
 }

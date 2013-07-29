@@ -1,5 +1,5 @@
 public interface Target{
     
-    int getRandomeNumber(int x);
+    public abstract int getRandomeNumber(int x);
     
 }

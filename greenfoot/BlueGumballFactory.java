@@ -4,7 +4,7 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class BlueGumballFactory extends GumballFactory
+public class BlueGumballFactory implements GumballFactory
 {
     public Gumball getGumball() {
         return new BlueGumball();

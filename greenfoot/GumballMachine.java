@@ -1,18 +1,10 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
-/**
- * Write a description of class GumballMachine here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
- * 
- */
 import java.util.ArrayList;
 public class GumballMachine extends Actor implements Subject
 {
     Message m=new Message();
     Coin haveCoin;
-    Inspector inspector;
     static int num_Gumballs=2; //initial number of gummballs
     private ArrayList<GumballObserver> observers=new ArrayList<GumballObserver>();
     
@@ -82,17 +74,13 @@ public class GumballMachine extends Actor implements Subject
             {  
               
                 setMessage( "Turned Crank!" ) ;
-                //registerObserver(inspector);
                 notifyObservers();
-              
                 haveCoin = null ;
                 
             }
         }
         
-         Actor coin;
-    
-        coin=getOneObjectAtOffset(+5, +5, Coin.class);
+         Actor coin=getOneObjectAtOffset(+5, +5, Coin.class);
         /*
          * if you have dragged any coin ( quarter, penny, fake) over machine;
          * then yo have the coin now

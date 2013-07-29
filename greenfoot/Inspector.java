@@ -7,7 +7,7 @@ public class Inspector extends Alien implements GumballObserver
 {
     private ArrayList<Picker> pickers = new ArrayList<Picker>() ;
     
-	public  void addPicker(Picker obj) {
+	public void addPicker(Picker obj) {
 	    pickers.add(obj) ;
 	}
 
@@ -44,7 +44,7 @@ public class Inspector extends Alien implements GumballObserver
 	       if(GumballMachine.num_Gumballs !=0 ){
 	           
              GumballMachine.num_Gumballs--;
-             System.out.println("Num of ball: "+ GumballMachine.num_Gumballs);
+             System.out.println("Num of balls left: "+ GumballMachine.num_Gumballs);
 	         pickerChosen.pick() ;//at runtime
 	         Greenfoot.playSound("BALLOUT.wav");
 	       
@@ -62,28 +62,7 @@ public class Inspector extends Alien implements GumballObserver
 	       System.out.println("Not Qulified Quarter, Please insert a real quarter");
 	      
 	   }
-	   /*
-	    * 
-	    *if (  GumballMachine.num_Gumballs !=0  ){
-
-	       if(coin.getClass() == Quarter.class){
-	           
-             GumballMachine.num_Gumballs--;
-	         pickerChosen.pick() ;//at runtime
-	         Greenfoot.playSound("BALLOUT.wav");
-	       
-	      }else{
-	       
-	       System.out.println("Not Qulified Quarter, Please insert a real quarter");
-	      }
-	
-	   }else {
-	       
-	       setMessage("No Gumball");
-	       GumballMachine.num_Gumballs=10;
-	       System.out.println("No Gumball, please insert more");
-	   }
-	   */
+	   
 	}
   
 
